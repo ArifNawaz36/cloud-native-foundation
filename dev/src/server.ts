@@ -1,6 +1,7 @@
-import * as express from "express";
 import { config } from 'dotenv';
 config(); // dotenv config
+import * as express from "express";
+import { logger } from './logger';
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.get("/metrics", (request, response) => {
   response.send(result);
 });
 
-app.listen(process.env.SERVER_PORT, () => {
-  console.log(`Server is running at port ${process.env.SERVER_PORT}.`);
+const port = process.env.SERVER_PORT
+app.listen(port, () => {
+  console.log(`Server is running at port ${port}.`);
 });
