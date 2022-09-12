@@ -24,6 +24,6 @@ app.get("/metrics", (request, response) => {
   response.send(result);
 });
 
-app.listen(process.env.SERVER_PORT, () => {
-  console.log(`Server is running at port ${process.env.SERVER_PORT}.`);
+app.listen(8080, () => {
+  console.log(`Server is running at port ${8080}.`);
 });
